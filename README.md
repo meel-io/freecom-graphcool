@@ -1,5 +1,5 @@
 # freecom-graphcool
 Graphcool Freecom tutorial (updated)
 
-To start:
-`graphcool deploy
+To start API:
+`graphcool deploy`
