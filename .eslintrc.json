@@ -1,3 +1,6 @@
 {
-  "extends": "standard"
+  "extends": "react",
+  "rules": {
+    "no-extra-semi": 1
+  }
 }
