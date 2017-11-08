@@ -1,6 +1,6 @@
 {
   "extends": "react",
-  "rules": {
-    "no-extra-semi": 1
+  "env": {
+    "browser": true
   }
 }
