@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { withApollo, gql } from "react-apollo";
 import "./Chat.css";
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
 import Dropzone from "react-dropzone";
 
-export default class Chat extends Component {
+class Chat extends Component {
     constructor () {
         super();
         this.state = {
@@ -12,9 +13,45 @@ export default class Chat extends Component {
         };
     }
 
-    _onSend () {}
+    componentDidMount () {
+        // this requires wrapping `Chat` with `withApollo`
+        this.props.client
+            .query({
+                query: gql`
+                    query allMessages {
+                        allMessages {
+                            id
+                            text
+                        }
+                    }
+                `
+            })
+            .then(response => {
+                // handle the response
+            });
+    }
 
     _onFileDrop (acceptedFiles, rejectedFiles) {}
+
+    _onSend () {
+        this.props.client
+            .mutate({
+                mutation: gql`
+                    mutation createMessage($text: String!) {
+                        createMessage(text: $text) {
+                            id
+                            text
+                        }
+                    }
+                `,
+                variables: {
+                    text: "Hello"
+                }
+            })
+            .then(response => {
+                // handle the response
+            });
+    }
 
     render () {
         return (
@@ -44,3 +81,5 @@ export default class Chat extends Component {
         );
     }
 }
+
+export default withApollo(Chat);

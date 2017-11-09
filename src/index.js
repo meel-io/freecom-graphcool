@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import "./index.css";
-/****
+
+import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-client";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -15,7 +16,7 @@ const client = new ApolloClient({
     cache,
     dataIdFromObject: o => o.id
 });
-****/
+
 const freecom = {
     render,
     companyName: "Graphcool",
@@ -31,7 +32,12 @@ function render (element) {
         element = root;
     }
 
-    ReactDOM.render(<App freecom={freecom} />, element);
+    ReactDOM.render(
+        <ApolloProvider client={client}>
+            <App freecom={freecom} />
+        </ApolloProvider>,
+        element
+    );
 }
 
 render(document.getElementById("__freecom-root__"));
