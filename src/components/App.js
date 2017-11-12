@@ -34,7 +34,7 @@ export default class App extends Component {
     async _setupNewCustomer () {}
 
     _togglePanel () {
-        return this.setState({ isOpen: !this.isOpen });
+        return this.setState({ isOpen: !this.state.isOpen });
     }
 
     _resetConversation () {
