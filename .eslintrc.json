@@ -1,6 +1,3 @@
 {
-  "extends": "react",
-  "env": {
-    "browser": true
-  }
+  "extends": "standard"
 }

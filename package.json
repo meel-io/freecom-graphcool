@@ -4,12 +4,8 @@
   "description": "Graphcool Freecom tutorial (updated)",
   "main": "src/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "lint": "eslint src --color",
-    "precommit": "npm run lint"
+    "start": "webpack-dev-server --inline --hot --port 3000",
+    "lint": "eslint src --color"
   },
   "repository": {
     "type": "git",
@@ -28,13 +24,10 @@
     "classnames": "^2.2.5",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
-    "react": "^16.0.0",
-    "react-apollo": "^2.0.0",
-    "react-dom": "^16.0.0",
-    "react-dropzone": "^4.2.1",
-    "react-textarea-autosize": "^5.1.0",
     "sillyname": "^0.1.0",
-    "subscriptions-transport-ws": "^0.9.1"
+    "subscriptions-transport-ws": "^0.9.1",
+    "vue": "^2.5.11",
+    "vue-apollo": "^3.0.0-alpha.2"
   },
   "devDependencies": {
     "eslint": "^4.10.0",
@@ -44,6 +37,8 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
-    "react-scripts": "^1.0.17"
+    "vue-loader": "^13.6.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   }
 }
