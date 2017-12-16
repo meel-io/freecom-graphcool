@@ -19,7 +19,7 @@
   "homepage": "https://github.com/meel-io/freecom-graphcool#readme",
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.0",
-    "apollo-client": "^2.0.2",
+    "apollo-client": "^2.0.4",
     "apollo-link-http": "^1.1.0",
     "classnames": "^2.2.5",
     "graphql": "^0.11.7",
@@ -30,14 +30,20 @@
     "vue-apollo": "^3.0.0-alpha.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
-    "eslint-config-react": "^1.1.7",
     "eslint-config-standard": "^10.2.1",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^2.1.0",
     "husky": "^0.14.3",
     "vue-loader": "^13.6.0",
+    "vue-template-compiler": "^2.5.11",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }
