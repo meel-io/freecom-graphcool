@@ -1,6 +1,6 @@
 <template>
-  <div class="app">
-    <start-button/>
+  <div id="app">
+    <StartButton/>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import StartButton from "./components/StartButton.vue"
 export default {
   name: "app",
   components: {
-    startButton: StartButton
+    StartButton
   }
 }
 </script>

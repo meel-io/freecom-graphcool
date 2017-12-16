@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="togglePanel">
+    <div v-bind:class="buttonStyles" v-on:click="togglePanel">
         <i class='material-icons'>{{this.isOpen ? 'close' : 'chat_bubble'}}</i>
     </div>
 </template>

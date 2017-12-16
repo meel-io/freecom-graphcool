@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import ApolloClient from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
 import VueApollo from 'vue-apollo'
 
-const networkInterface = createNetworkInterface({
-  uri: 'https://api.graph.cool/simple/v1/cj9n3v8z108o8010845fuvepz'
-})
+const networkInterface = {
+  link: new HttpLink({
+    uri: 'https://api.graph.cool/simple/v1/cj9n3v8z108o8010845fuvepz'
+  })
+}
 
 const apolloClient = new ApolloClient({
   networkInterface
@@ -20,5 +23,6 @@ const apolloProvider = new VueApollo({
 new Vue({
   el: '#app',
   apolloProvider,
-  render: h => h(App)
+  template: '<App/>',
+  components: { App }
 })
